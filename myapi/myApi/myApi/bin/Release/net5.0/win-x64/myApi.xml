@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>myApi</name>
+    </assembly>
+    <members>
+        <member name="P:myApi.classes.Category.DesCategory">
+            <summary>
+            Name of Category
+            </summary>
+        </member>
+        <member name="P:myApi.classes.Category.CodeCategory">
+            <summary>
+            code of Customer
+            </summary>
+        </member>
+        <member name="P:myApi.classes.Customer.CustomerName">
+            <summary>
+            Name of Customer
+            </summary>
+        </member>
+        <member name="P:myApi.classes.Customer.CustomerCode">
+            <summary>
+            code of Customer
+            </summary>
+        </member>
+        <member name="M:myApi.Controllers.CategoryController.Get">
+            <summary>
+            Get all category details
+            </summary>
+            <returns>All category details with id, descategory and codecategory fields</returns>
+        </member>
+        <member name="M:myApi.Controllers.CategoryController.Get(System.Int64)">
+            <summary>
+            Get category detail by id
+            </summary>
+            <param name="idcategory">This id is unique/primary key of category </param>
+            <returns>Category category details with id, descategory and codecategory fields</returns>
+        </member>
+        <member name="M:myApi.Controllers.CustomerController.Get">
+            <summary>
+            Get all customer details
+            </summary>
+            <returns>All customer details with id, customername and cutomer code fields</returns>
+        </member>
+        <member name="M:myApi.Controllers.CustomerController.Get(System.Int64)">
+            <summary>
+            Get customer detail by id
+            </summary>
+            <param name="id">This id is unique/primary key of customer </param>
+            <returns>Customer details with id, customername and cutomer code fields</returns>
+        </member>
+        <member name="M:myApi.Controllers.ProductController.Get">
+            <summary>
+            Get all category details
+            </summary>
+            <returns>All category details with id, descategory and codecategory fields</returns>
+        </member>
+        <member name="M:myApi.Controllers.ProductController.Get(System.Int64)">
+            <summary>
+            Get product detail by id
+            </summary>
+            <param name="idproduct">This id is unique/primary key of product </param>
+            <returns>Product details with id and fields</returns>
+        </member>
+    </members>
+</doc>

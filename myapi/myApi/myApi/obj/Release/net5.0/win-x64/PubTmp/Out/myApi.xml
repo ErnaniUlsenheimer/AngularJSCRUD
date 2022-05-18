@@ -1,0 +1,114 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>SwaggerDemo</name>
+  </assembly>
+  <members>
+    <member name="M:SwaggerDemo.Controllers.CustomerController.Get">
+      <summary>
+        Get all customer details
+      </summary>
+      <returns>All customer details with id, customername and cutomer code fields</returns>
+    </member>
+    <member name="M:SwaggerDemo.Controllers.CustomerController.Get(System.Int64)">
+      <summary>
+        Get customer detail by id
+      </summary>
+      <param name="id">This id is unique/primary key of customer </param>
+      <returns>Customer details with id, customername and cutomer code fields</returns>
+    </member>
+    <member name="P:SwaggerDemo.classes.Customer.Id">
+      <summary>
+        Id of Customer
+      </summary>
+    </member>
+    <member name="P:SwaggerDemo.classes.Customer.CustomerName">
+      <summary>
+        Name of Customer
+      </summary>
+    </member>
+    <member name="P:SwaggerDemo.classes.Customer.CustomerCode">
+      <summary>
+        code of Customer
+      </summary>
+    </member>
+
+
+
+
+    <member name="M:SwaggerDemo.Controllers.CategoryController.Get">
+      <summary>
+        Get all Category details
+      </summary>
+      <returns>All Category details with id, customername and cutomer code fields</returns>
+    </member>
+    <member name="M:SwaggerDemo.Controllers.CategoryController.Get(System.Int64)">
+      <summary>
+        Get Category detail by id
+      </summary>
+      <param name="idcategory">This id is unique/primary key of category </param>
+      <returns>Category details with id, descategory and codecategory code fields</returns>
+    </member>
+    <member name="P:SwaggerDemo.classes.Category.Id">
+      <summary>
+        Id of Category
+      </summary>
+    </member>
+    <member name="P:SwaggerDemo.classes.Category.DesCategory">
+      <summary>
+        Name of Category
+      </summary>
+    </member>
+    <member name="P:SwaggerDemo.classes.Category.CodeCategory">
+      <summary>
+        code of Category
+      </summary>
+    </member>
+
+
+
+
+
+
+    <member name="M:SwaggerDemo.Controllers.ProductController.Get">
+      <summary>
+        Get all Products details
+      </summary>
+      <returns>All Product details with id, desproduct, desurl and idcategory fields</returns>
+    </member>
+    <member name="M:SwaggerDemo.Controllers.ProductController.Get(System.Int64)">
+      <summary>
+        Get Product detail by id
+      </summary>
+      <param name="idproduct">This id is unique/primary key of product </param>
+      <returns>Product details with id, desproduct, desurl and idcategory fields</returns>
+    </member>
+    <member name="P:SwaggerDemo.classes.Product.Id">
+      <summary>
+        Id of Product
+      </summary>
+    </member>
+    <member name="P:SwaggerDemo.classes.Product.DesProduct">
+      <summary>
+        Name of Product
+      </summary>
+    </member>
+    <member name="P:SwaggerDemo.classes.Product.DesUrl">
+      <summary>
+        DesUrl
+      </summary>
+    </member>
+    <member name="P:SwaggerDemo.classes.Product.IdCategory">
+      <summary>
+        Id of Category
+      </summary>
+    </member>
+    
+    
+    
+    
+    
+    
+    
+  </members>
+</doc>

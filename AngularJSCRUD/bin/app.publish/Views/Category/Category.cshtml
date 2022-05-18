@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Category";
+}
+<h2>Create Category</h2>
+
+<div id="content" ng-controller="CategoryController">
+    <span ng-show="isViewLoading" class="viewLoading">
+        <img src="~/Content/images/ng-loader.gif" /> loading...
+    </span>
+    <div ng-class="result">{{message}}</div>
+    <hr />
+    <form name="frmCategory" novalidate>
+        <div>
+            <input type="hidden" ng-model="custModel.Id" name="cid" />
+        </div>
+        <div>
+            <label for="ccode">Category Name</label>
+            <input type="text" ng-model="custModel.DesCategory" name="cname" placeholder="" required ng-minlength="4" ng-maxlength="14" />
+            <span class="error" ng-show="(frmCategory.$dirty||submitted) && frmCategory.cname.$error.required">Category Name is Required</span>
+            <span class="error" ng-show="frmCategory.$dirty && frmCategory.cname.$error.minlength">Minimum length required is 5</span>
+            <span class="error" ng-show="frmCategory.$dirty && frmCategory.cname.$error.maxlength">Minimum length required is 15</span>
+        </div>
+        <div>
+            <label for="ccode">Category Code</label>
+            <input type="text" ng-model="custModel.CodeCategory" name="ccode" placeholder="" required ng-minlength="4" ng-maxlength="14" />
+            <span class="error" ng-show="(frmCategory.$dirty||submitted) && frmCategory.ccode.$error.required">Category Code is Required</span>
+            <span class="error" ng-show="frmCategory.$dirty && frmCategory.ccode.$error.minlength">Minimum length required is 5</span>
+            <span class="error" ng-show="frmCategory.$dirty && frmCategory.ccode.$error.maxlength">Minimum length required is 15</span>
+        </div>
+        <div class="btn">
+            <input type="submit" value="Save" ng-click="saveCategory()" ng-disabled="frmCategory.$invalid">
+            <input type="submit" value="Update" ng-click="updateCategory()" ng-disabled="frmCategory.$invalid">
+        </div>
+    </form>
+    <hr />
+
+    <h2>All Category</h2>
+    <table class="table table-striped">
+        <tr>
+            <td>Id</td>
+            <td>Category</td>
+            <td>Code</td>           
+            <td></td>
+        </tr>
+        <tr ng-repeat="custModel in ListCategory">
+            <td>{{custModel.Id}}</td>
+            <td>{{custModel.DesCategory}}</td>
+            <td>{{custModel.CodeCategory}}</td>
+            <td>
+                <a href="#" ng-click="getCategory(custModel)" title="Edit Record">
+                    <img src="~/Content/images/edit.png" />
+                </a><a href="#" ng-click="deleteCategory(custModel)" title="Delete Record">
+                    <img src="~/Content/images/erase.png" />
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section JavaScript{
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/ScriptsNg/CategoryController.js"></script>
+}
+

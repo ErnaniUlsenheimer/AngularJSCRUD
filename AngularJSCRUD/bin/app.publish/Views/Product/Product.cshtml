@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Product";
+}
+<h2>Product</h2>
+<div id="content" ng-controller="ProductController">
+    <span ng-show="isViewLoading" class="viewLoading">
+        <img src="~/Content/images/ng-loader.gif" /> loading...
+    </span>
+    <div ng-class="result">{{message}}</div>
+    <hr />
+    <form name="frmProduct" novalidate>
+        <div>
+            <input type="hidden" ng-model="custModel.product.Id" name="cid" />
+        </div>
+        <div>
+            <label for="sCategory">Select Category</label>
+            <select name="sCategory" ng-model="sCategory" ng-change='GetSelectedValue()' id="sCategory" required>
+                <option ng-repeat="item in ListCategory" ng-selected="selectedValue == item.Id" value="{{item.Id}}">
+                    {{item.DesCategory}}
+                </option>
+            </select>
+            <span class="help-inline" ng-show="submitted && frmProduct.sCategory.$error.required">Required</span>
+        </div>
+
+        <div>
+            <label for="ccode">Product Name</label>
+            <input type="text" ng-model="custModel.product.DesProduct" name="cname" placeholder="" required ng-minlength="4" ng-maxlength="20" />
+            <span class="error" ng-show="(frmProduct.$dirty||submitted) && frmProduct.cname.$error.required">Product Name is Required</span>
+            <span class="error" ng-show="frmProduct.$dirty && frmProduct.cname.$error.minlength">Minimum length required is 5</span>
+            <span class="error" ng-show="frmProduct.$dirty && frmProduct.cname.$error.maxlength">Minimum length required is 20</span>
+        </div>
+        <div>
+            <label for="ccode">Product Url</label>
+            <input type="text" ng-model="custModel.product.DesUrl" name="ccode" placeholder="" />
+        </div>
+        <div class="btn">
+            <input type="submit" value="Save" ng-click="saveProduct()" ng-disabled="frmProduct.$invalid">
+            <input type="submit" value="Update" ng-click="updateProduct()" ng-disabled="frmProduct.$invalid">
+        </div>
+    </form>
+    <hr />
+
+    <h2>All Product</h2>
+    <table class="table table-striped">
+        <tr>
+            <td>Id</td>
+            <td>Product</td>
+            <td>Url</td>
+            <td>Category</td>
+            <td>                
+            </td>
+        </tr>
+        <tr ng-repeat="custModel in ListProductCategory">
+            <td>{{custModel.product.Id}}</td>
+            <td>{{custModel.product.DesProduct}}</td>
+            <td>{{custModel.product.DesUrl}}</td>
+            <td>{{custModel.category.DesCategory}}</td>
+            <td>
+                <a href="#" ng-click="getProduct(custModel)" title="Edit Record">
+                    <img src="~/Content/images/edit.png" />
+                </a><a href="#" ng-click="deleteProduct(custModel)" title="Delete Record">
+                    <img src="~/Content/images/erase.png" />
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@section JavaScript{
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/ScriptsNg/ProductController.js"></script>
+}
+
